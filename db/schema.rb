@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 20150804144449) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "current_pair"
-    t.text     "first_name"
-    t.text     "last_name"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true, using: :btree
