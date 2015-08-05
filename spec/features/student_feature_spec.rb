@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'User can sign in and out' do
-  context 'user is not logged in and on the homepage' do
+feature 'student can sign in and out' do
+  context 'student is not logged in and on the homepage' do
     scenario 'should see and sign in link and a sign up link' do
       visit('/')
       expect(page).to have_link('Log in')
@@ -14,7 +14,7 @@ feature 'User can sign in and out' do
     end
   end
 
-  context 'user logged in on the homepage' do
+  context 'student logged in on the homepage' do
     before do
       visit('/')
       click_link('Sign up')
@@ -37,5 +37,16 @@ feature 'User can sign in and out' do
       expect(page).not_to have_link('Sign up')
     end
   end
+end
 
+feature 'students can see a cohort list' do
+  let!(:student) do
+    create(:student)
+  end
+  
+  scenario 'should see a cohort list on the homepage' do
+    visit ('/')
+    expect(page).to have_content('Cohort List')
+    expect(page).to have_content("#{student.first_name}")
+  end
 end
