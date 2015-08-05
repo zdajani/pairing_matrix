@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804144449) do
+ActiveRecord::Schema.define(version: 20150805094213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 20150804144449) do
   add_index "blacklisted_students", ["student_id"], name: "index_blacklisted_students_on_student_id", using: :btree
 
   create_table "pairs", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "student_id"
-    t.integer  "assigned_pair"
+    t.integer  "assigned_pair_id"
   end
 
   add_index "pairs", ["student_id"], name: "index_pairs_on_student_id", using: :btree
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 20150804144449) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "current_pair"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.text     "first_name"
+    t.text     "last_name"
   end
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true, using: :btree
