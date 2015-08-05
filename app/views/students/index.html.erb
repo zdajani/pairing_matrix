@@ -1,0 +1,9 @@
+<% if @students.any? %>
+  <% @students.each do |student| %>
+  <%= student.first_name%>
+  <% end %>
+  <% else %>
+   no students
+   <% end %>
+
+Cohort List

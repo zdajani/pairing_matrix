@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   
-  root to: "pairings#index"
+  root to: "students#index"
   
   devise_for :students
   
   resources :students do
-    resources :pairings, :blacklisted_students
+    resources :pairs
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
