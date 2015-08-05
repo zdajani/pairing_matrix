@@ -5,17 +5,30 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
-  <% if student_signed_in? %>
-    <%= link_to "Sign out", destroy_student_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Log in", new_student_session_path %>
-    <%= link_to "Sign up", new_student_registration_path %>
-  <% end %>
-
-
-<%= yield %>
+  <nav class="navbar navbar-default navbar-top" role="navigation">
+    <div class="navbar-header">
+      <div class="navbar-right">
+        <% if student_signed_in? %>
+          <span class="devise-btn"><%= link_to "Sign out", destroy_student_session_path, method: :delete %></span>
+        <% else %>
+          <span class="devise-btn"><%= link_to "Log in", new_student_session_path %></span>
+          <span class="devise-btn"><%= link_to "Sign up", new_student_registration_path %></span>
+        <% end %>
+      </div>
+      <a class="navbar-brand" href="/"><h1 class="brand-head">Pairing Matrix</h1></a>
+      <div class="center-block">insert witty slogan here</div>
+    </div>
+  </nav>
+  <div class="container">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </div>
 
 </body>
 </html>
+
+<!--button button-border-black button-left px-12-padded fade-border-->

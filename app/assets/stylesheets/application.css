@@ -1,15 +1,112 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+.container {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.navbar-header {
+    float: left;
+    text-align: left;
+    width: 100%;
+    min-height: 19rem;
+    background-color: #f0f0f0;
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hello {
+  color: red;
+}
+
+.navbar-brand {
+  float:none!important;
+  display: block;
+  text-align: center;
+  clear: both;
+}
+
+.navbar-right {
+  padding: 10px 25px 0 0;
+}
+
+.brand-head {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0 0 0.5em 0;
+}
+
+h4 {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  letter-spacing: 0.02rem;
+}
+
+.center-block {
+  text-align:center;
+  padding-top: 10px;
+}
+
+.navbar-default .navbar-brand {
+  color: #333333!important;
+}
+
+a {
+  color: #333!important;
+}
+
+a:hover {
+  text-decoration: none!important;
+  color: #a9a9a9;
+}
+
+.devise-btn {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor:pointer;
+  background-color:transparent;
+  border:3px solid #333;
+  margin: 0 0 0 10px;
+  width:100px;
+  letter-spacing: 0.1rem;
+}
+
+.devise-btn a {
+  color:#333;
+  text-decoration:none;
+  display:block;
+  padding:12px 0;
+}
+
+.devise-btn a:hover {
+  color: #a9a9a9;
+}
+
+/* FORM STYLING */
+.field input {
+  font-size: 16px;
+  padding: 18px;
+  background-color: #f1f1f1;
+  width: 100%;
+  outline: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  -webkit-border-radius: 0px;
+}
+
+
+.field_with_errors label {
+   color: red;
+ }
+
+.alert {
+  color: red
+}
