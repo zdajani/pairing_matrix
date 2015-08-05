@@ -9,6 +9,7 @@ require 'capybara/rails'
 require 'support/database_cleaner'
 require 'factory_girl'
 require_relative './factories/student'
+require_relative '../lib/sorter.rb'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -34,7 +35,7 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   include Warden::Test::Helpers
   Warden.test_mode!
-  
+
   config.include FactoryGirl::Syntax::Methods
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
