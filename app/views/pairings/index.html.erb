@@ -1,0 +1,20 @@
+<% if @students.any? %>
+  <% @students.each do |student| %>
+    <%= student.first_name%>
+  <%end%>
+<% else %>
+   no students
+<% end %>
+
+
+
+Cohort List
+
+<%= form_tag('/pairings') do %>
+  <%= text_field_tag :pairing_session %>
+  <%= submit_tag 'Generate pairs' %>
+<%end%>
+
+<%@pairs.each do |pair| %>
+  <%="#{pair.student.first_name} is paired with #{pair.assigned_pair.first_name}"%>
+<%end%>

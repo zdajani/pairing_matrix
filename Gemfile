@@ -51,6 +51,7 @@ group :development, :test do
   gem 'rspec-collection_matchers'
   gem 'database_cleaner'
   gem 'factory_girl'
+  gem 'launchy'
 end
 
 group :test do
