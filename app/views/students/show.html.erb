@@ -1,0 +1,18 @@
+<div class="container">
+  <h4>Cohort List</h4>
+
+  <% if @students.any? %>
+    <% @students.each do |student| %>
+      <%= student.first_name %>
+      <%= student.last_name %><br />
+  <% end %>
+  <% else %>
+  <% end %>
+
+  <form method="post">
+    <select name="Days">
+      <option value="Day 1">Day 1</option>
+      <option value="Day 2">Day 2</option>
+    </select>
+  </form>
+</div>

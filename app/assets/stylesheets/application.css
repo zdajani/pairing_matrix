@@ -1,4 +1,3 @@
-
 .container {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,12 +9,6 @@
     width: 100%;
     min-height: 19rem;
     background-color: #f0f0f0;
-    font-family: Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-}
-
-.hello {
-  color: red;
 }
 
 .navbar-brand {
@@ -37,7 +30,7 @@
 
 h4 {
   font-size: 1rem;
-  letter-spacing: 0.1rem;
+  /*letter-spacing: 0.1rem;*/
 }
 
 h2 {
@@ -45,16 +38,31 @@ h2 {
   letter-spacing: 0.02rem;
 }
 
+.h-title {
+  text-align: center;
+  margin: 0 0 4.5em 0;
+}
+
+.h-title h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.h-underline {
+  margin: 0 auto;
+  display: block;
+  width: 48px;
+  height: 3px;
+  padding-top: 0.5em;
+  border-bottom: 3px solid #333;
+}
+
 .center-block {
   text-align:center;
   padding-top: 10px;
 }
 
-.navbar-default .navbar-brand {
-  color: #333333!important;
-}
-
-a {
+.navbar-default .navbar-brand, a {
   color: #333!important;
 }
 
@@ -63,7 +71,7 @@ a:hover {
   color: #a9a9a9;
 }
 
-.devise-btn {
+.devise-btn, .devise-btn-lrg, .devise-btn-ex-lrg {
   display: inline-block;
   text-align: center;
   text-transform: uppercase;
@@ -71,12 +79,29 @@ a:hover {
   cursor:pointer;
   background-color:transparent;
   border:3px solid #333;
-  margin: 0 0 0 10px;
-  width:100px;
   letter-spacing: 0.1rem;
 }
 
-.devise-btn a {
+.devise-btn {
+  width:100px;
+  margin: 0 0 0 10px;
+}
+
+.devise-btn-lrg, .devise-btn-ex-lrg {
+  width:150px;
+  text-transform: uppercase;
+  padding:10px 0;
+}
+
+.devise-btn-lrg {
+  width:150px;
+}
+
+.devise-btn-ex-lrg {
+  width:365px;
+}
+
+.devise-btn a, .devise-btn-lrg a, .devise-btn-ex-lrg a {
   color:#333;
   text-decoration:none;
   display:block;
@@ -102,6 +127,13 @@ a:hover {
   -webkit-border-radius: 0px;
 }
 
+.greybox {
+  font-size: 16px;
+  padding: 18px;
+  background: #f1f1f1;
+  margin-bottom: 15px;
+}
+
 
 .field_with_errors label {
    color: red;
@@ -109,4 +141,39 @@ a:hover {
 
 .alert {
   color: red
+}
+
+.devise-btn input {
+  margin: 0em;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+}
+
+.reset input {
+  -webkit-appearance: none;
+  padding: 1px;
+  background-color: transparent;
+  border: 0;
+  border-image-source: none;
+  border-image-slice: none;
+  border-image-width: none;
+  border-image-outset: none;
+  border-image-repeat: none;
+  -webkit-rtl-ordering: logical;
+  -webkit-user-select: text;
+}
+
+.reset input[type=submit] {
+  -webkit-appearance: none;
+}
+
+.shared-links {
+  padding: 10px 0 0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.shared-links :hover {
+  color: #a9a9a9;
 }

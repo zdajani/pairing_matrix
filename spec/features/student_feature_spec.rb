@@ -23,7 +23,7 @@ feature 'student can sign in and out' do
       fill_in('Email', with: 'test@example.com')
       fill_in('Password', with: 'testtest')
       fill_in('Password confirmation', with: 'testtest')
-      click_button('Sign up')
+      click_button('SIGN UP')
     end
 
     scenario 'should see \'sign out\' link' do
@@ -40,13 +40,32 @@ feature 'student can sign in and out' do
 end
 
 feature 'students can see a cohort list' do
-  let!(:student) do
-    create(:student)
+
+  # let!(:student) do
+  #   create(:student)
+  # end
+
+  before do
+    visit('/')
+    click_link('Sign up')
+    fill_in('First name', with: 'rob')
+    fill_in('Last name', with: 'stark')
+    fill_in('Email', with: 'test@example.com')
+    fill_in('Password', with: 'testtest')
+    fill_in('Password confirmation', with: 'testtest')
+    click_button('SIGN UP')
   end
-  
-  scenario 'should see a cohort list on the homepage' do
-    visit ('/')
+
+  scenario 'should see a cohort list when logged in' do
+    visit '/students/1'
     expect(page).to have_content('Cohort List')
-    expect(page).to have_content("#{student.first_name}")
+    expect(page).to have_content("rob stark")
   end
+
+  scenario 'should see a dropdown with a list of days' do
+    visit '/students/1'
+    expect(page).to have_content('')
+    expect(page).to have_css 'select', text: 'Day 1'
+  end
+
 end
