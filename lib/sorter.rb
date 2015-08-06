@@ -1,13 +1,13 @@
 class Sorter
   attr_reader :students
 
-  def initialize(students)
-    @students = students
-  end
+  # def initialize(students)
+  #   @students = students
+  # end
 
-  def get_student_list
-    students.keys
-  end
+  # def get_student_list
+  #   students.keys
+  # end
 
   def get_previous_pairs(student)
     students[student]

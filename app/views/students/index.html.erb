@@ -1,9 +1,23 @@
 <% if @students.any? %>
   <% @students.each do |student| %>
-  <%= student.first_name%>
-  <% end %>
-  <% else %>
+    <%= student.first_name%>
+  <%end%>
+<% else %>
    no students
-   <% end %>
+<% end %>
+
+<% if @day_pairs.any? %>
+  <% @day_pairs.each do |pairs| %>
+    <%= pairs[0][0].first_name%>
+    <%= pairs[0][1].first_name%>
+  <% end %>
+  list
+<%end%>
 
 Cohort List
+
+<%=form_tag controller: "students", action:"create", method: "post" do %>
+  <%=text_field_tag(:today_pair)%>
+  <%=submit_tag name="today_pair"%>
+<%end%>
+
