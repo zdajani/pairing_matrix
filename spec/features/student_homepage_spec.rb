@@ -7,14 +7,13 @@ feature "student homepage" do
     3.times { create(:student) }
     visit root_path
     login_as student1
-    fill_in :pairing_session, with: '1'
+    find("option[value='1']").click
     click_button 'Generate pairs'
     click_link 'Sign out' 
   end
   scenario "going to an individual homepage" do
     visit root_path
     click_link 'Log in'
-    
     fill_in 'Email', with: student1.email
     fill_in 'Password', with: student1.password 
     click_button('LOG IN')

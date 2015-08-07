@@ -8,6 +8,7 @@ module StudentsHelper
         update_current_pair(pairs.first.id, pairs.last.id)
       end
     end
+    
 
     private
     
