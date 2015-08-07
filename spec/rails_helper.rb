@@ -9,7 +9,6 @@ require 'capybara/rails'
 require 'support/database_cleaner'
 require 'factory_girl'
 require_relative './factories/student'
-require_relative '../lib/sorter.rb'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 

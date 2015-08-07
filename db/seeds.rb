@@ -21,4 +21,4 @@ Student.create(first_name: "Michael", last_name: "A", email: "fake4@fakemail.com
 
 Student.create(first_name: "Zeina", last_name: "D", email: "fake5@fakemail.com", password: '12345678', password_confirmation: '12345678')
 
-Student.create(first_name: "Natalia", last_name: "N", email: "fake6@fakemail.com", password: '12345678', password_confirmation: '12345678')
+Student.create(first_name: "Natalia", last_name: "A", email: "fake6@fakemail.com", password: '12345678', password_confirmation: '12345678')
