@@ -23,7 +23,7 @@ feature 'student can sign in and out' do
       fill_in('Email', with: 'test@example.com')
       fill_in('Password', with: 'testtest')
       fill_in('Password confirmation', with: 'testtest')
-      click_button('Sign up')
+      click_button('SIGN UP')
     end
 
     scenario 'should see \'sign out\' link' do
@@ -43,7 +43,7 @@ feature 'students can see a cohort list' do
   let!(:student) do
     create(:student)
   end
-  
+
   scenario 'should see a cohort list on the homepage' do
     visit ('/')
     expect(page).to have_content('Cohort List')

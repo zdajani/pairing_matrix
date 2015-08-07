@@ -1,29 +1,30 @@
-Cohort List
+<div class="container">
+  <div class="row center-block">
+  <h2>Cohort List</h2>
 
-<% if @students.any? %>
-  <% @students.each do |student| %>
-  <ul>
-    <%=link_to student.first_name, student_pairings_path(student)%>
-  </ul>
-  <%end%>
-<% else %>
-   no students
-<% end %>
+    <% if @students.any? %>
+      <% @students.each do |student| %>
+      <ul>
+        <%=link_to student.first_name, student_pairings_path(student)%>
+      </ul>
+      <%end%>
+    <% else %>
+       no students
+    <% end %>
 
-<%= form_tag('/pairings') do %>
-  <%= text_field_tag :pairing_session %>
-  <%= submit_tag 'Generate pairs' %>
-<%end%>
+    <%= form_tag('/pairings') do %>
+      <%= text_field_tag :pairing_session %>
+      <%= submit_tag 'Generate pairs' %>
+    <%end%>
 
-Pairs
-<% if @pairs.any? %>
-<%@pairs.each do |pair| %>
-<ul>
-  <%="Pairing Session #{pair.session_number}" %>
-  <%="#{pair.student.first_name} is paired with #{pair.assigned_pair.first_name}"%>
-</ul>
-<%end%>
-<%end%>
-
-
-
+    Pairs
+    <% if @pairs.any? %>
+    <%@pairs.each do |pair| %>
+    <ul>
+      <%="Pairing Session #{pair.session_number}" %>
+      <%="#{pair.student.first_name} is paired with #{pair.assigned_pair.first_name}"%>
+    </ul>
+    <%end%>
+    <%end%>
+  </div>
+</div>
