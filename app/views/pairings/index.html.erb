@@ -1,20 +1,29 @@
+Cohort List
+
 <% if @students.any? %>
   <% @students.each do |student| %>
-    <%= student.first_name%>
+  <ul>
+    <%=link_to student.first_name, student_pairings_path(student)%>
+  </ul>
   <%end%>
 <% else %>
    no students
 <% end %>
-
-
-
-Cohort List
 
 <%= form_tag('/pairings') do %>
   <%= text_field_tag :pairing_session %>
   <%= submit_tag 'Generate pairs' %>
 <%end%>
 
+Pairs
+<% if @pairs.any? %>
 <%@pairs.each do |pair| %>
+<ul>
+  <%="Pairing Session #{pair.session_number}" %>
   <%="#{pair.student.first_name} is paired with #{pair.assigned_pair.first_name}"%>
+</ul>
 <%end%>
+<%end%>
+
+
+

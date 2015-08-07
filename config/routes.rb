@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   
   resources :pairings
   
+  get  '/students/:student_id/pairings', to: 'students#show', as: 'student_pairings'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
