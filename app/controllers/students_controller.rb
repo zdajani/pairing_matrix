@@ -1,12 +1,10 @@
 class StudentsController < ApplicationController
-  before_action :authenticate_student!, :except => [:index]
-
   def index
-    # @students = Student.all
+    @student = Student.all
   end
-
+  
   def show
-    @students = Student.all
+    @student = Student.find(params[:id])
   end
 
 end

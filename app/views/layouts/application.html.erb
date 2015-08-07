@@ -14,7 +14,7 @@
         <% if student_signed_in? %>
           <span class="devise-btn"><%= link_to "Sign out", destroy_student_session_path, method: :delete %></span>
         <% else %>
-          <span class="devise-btn"><%= link_to "Log in", new_student_session_path %></span>
+          <span class="devise-btn"><%= link_to "Log in", student_session_path %></span>
           <span class="devise-btn"><%= link_to "Sign up", new_student_registration_path %></span>
         <% end %>
       </div>
@@ -23,12 +23,10 @@
     </div>
   </nav>
   <div class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="notice center-block"><%= notice %></p>
+    <p class="alert center-block"><%= alert %></p>
     <%= yield %>
   </div>
 
 </body>
 </html>
-
-<!--button button-border-black button-left px-12-padded fade-border-->
