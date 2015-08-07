@@ -1,6 +1,10 @@
 <div class="container">
-  <div class="row center-block">
-
+  <div class="row">
+    <div class="cohort-list col-md-6 ">
+         <div class="h-title">
+           <h4>Cohort List</h4>
+           <span class="h-underline"></span>
+         </div>
   <h2>Cohort List</h2>
     <% if @students.any? %>
       <% @students.sort.each do |student| %>
@@ -16,8 +20,12 @@
     <%= select_tag(:pairing_session, options_for_select(@session_options)) %>
     <%= submit_tag 'Generate pairs' %>
     <%end%>
-
-    Pairs
+</div>
+<div class="pair-list col-md-6 ">
+ <div class="h-title">
+   <h4>Pairs</h4>
+   <span class="h-underline"></span>
+ </div>
     <%if @pairs.any? %>
       <%@students.each_with_index do |student, i| %>
       <ul>
@@ -27,5 +35,6 @@
       </ul>
     <%end%>
     <%end%>
+  </div>
   </div>
 </div>

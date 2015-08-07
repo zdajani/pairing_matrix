@@ -1,4 +1,19 @@
-.container {
+
+Zeina Dajani [12:24 PM] 
+http://mattbailey.io/a-beginners-guide-to-grunt-redux/
+
+Zeina Dajani [2:44 PM] 
+http://coenraets.org/blog/2011/12/tutorial-html-templates-with-mustache-js/
+
+Lucy Oliphant [5:06 PM] 
+http://engineering.wingify.com/posts/e2e-testing-with-webdriverjs-jasmine/
+This is the engineering blog from the hackers at Wingify
+NEW MESSAGES
+
+----- Today August 7th, 2015 -----
+
+Lucy Oliphant [1:37 PM] 
+```.container {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -176,4 +191,39 @@ a:hover {
 
 .shared-links :hover {
   color: #a9a9a9;
+}
+
+div.cohort-list, div.pair-list {
+  padding: 20px 100px!important;
+  text-align: center;
+}
+
+.cohort-list ul, .pair-list ul {
+  padding: 10px 0;
+  margin: 0;
+  text-align: center;
+}
+
+.cohort-list ul:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+.cohort-list h1, .pair-list h1 {
+  /*font-weight: bold;*/
+}
+
+.cohort-list {
+  /*border-right: 1px solid #e7e7e7;*/
+}
+
+.pair-list {
+  border-left: 1px solid #e7e7e7;
+}
+
+.pair-list ul:nth-child(odd) {
+  display: none;
+}
+
+.padding-btn {
+  padding-top: 40px;
 }
