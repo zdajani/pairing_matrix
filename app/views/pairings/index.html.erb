@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row center-block">
-  <h2>Cohort List</h2>
 
+  <h2>Cohort List</h2>
     <% if @students.any? %>
       <% @students.each do |student| %>
       <ul>
@@ -13,8 +13,8 @@
     <% end %>
 
     <%= form_tag('/pairings') do %>
-      <%= text_field_tag :pairing_session %>
-      <%= submit_tag 'Generate pairs' %>
+    <%= select_tag(:pairing_session, options_for_select(@pairs_length.sort)) %>
+    <%= submit_tag 'Generate pairs' %>
     <%end%>
 
     Pairs
