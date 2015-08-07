@@ -18,11 +18,10 @@
     <%end%>
 
     Pairs
-    <% if @pairs.any? %>
-    <%@pairs.each do |pair| %>
+    <% if @students.any? %>
+    <%@students.each do |student| %>
     <ul>
-      <%="Pairing Session #{pair.session_number}" %>
-      <%="#{pair.student.first_name} is paired with #{pair.assigned_pair.first_name}"%>
+      <%="#{student.first_name} is paired with #{(Student.find(student.current_pair)).first_name}"%>
     </ul>
     <%end%>
     <%end%>

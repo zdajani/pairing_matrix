@@ -5,6 +5,7 @@ module StudentsHelper
       day_pairs = (generate_pair_arrays(students)[session - 1])
       day_pairs.each do |pairs|
         generate_pairs(pairs.first.id, pairs.last.id, session)
+        update_current_pair(pairs.first.id, pairs.last.id)
       end
     end
 
@@ -38,5 +39,12 @@ module StudentsHelper
     def generate_pairs(pair_1, pair_2, session)
       Pair.create student_id: pair_1, assigned_pair_id: pair_2, session_number: session
       Pair.create student_id: pair_2, assigned_pair_id: pair_1, session_number: session
+    end
+    
+    def update_current_pair(pair_1, pair_2)
+      student1 = Student.find(pair_1)
+      student1.update(current_pair: pair_2)
+      student2 = Student.find(pair_2)
+      student2.update(current_pair: pair_1)
     end
 end
