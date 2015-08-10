@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  
+  root to: "pairings#index"
+  
+  devise_for :students
+
+  resources :students do
+    resources :pairs
+  end
+  
+  resources :pairings
+  
+  # get  '/students/:student_id/pairings', to: 'students#show', as: 'student_pairings'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

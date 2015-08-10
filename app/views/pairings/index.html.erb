@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="cohort-list col-md-6 ">
+         <div class="h-title">
+           <h4>Cohort List</h4>
+           <span class="h-underline"></span>
+         </div>
+  <h2>Cohort List</h2>
+    <% if @students.any? %>
+      <% @students.sort.each do |student| %>
+      <ul>
+        <%=link_to student.first_name, student_path(student)%>
+      </ul>
+      <%end%>
+    <% else %>
+       no students
+    <% end %>
+
+    <%= form_tag('/pairings') do %>
+    <%= select_tag(:pairing_session, options_for_select(@session_options)) %>
+    <%= submit_tag 'Generate pairs' %>
+    <%end%>
+</div>
+<div class="pair-list col-md-6 ">
+ <div class="h-title">
+   <h4>Pairs</h4>
+   <span class="h-underline"></span>
+ </div>
+    <%if @pairs.any? %>
+      <%@students.each_with_index do |student, i| %>
+      <ul>
+        <%if i%2 == 0 %>
+        <%="#{student.first_name} is paired with #{(Student.find(student.current_pair)).first_name}"%>
+      <%end%>
+      </ul>
+    <%end%>
+    <%end%>
+  </div>
+  </div>
+</div>

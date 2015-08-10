@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PairingMatrix</title>
+  <title>Pairing Matrix</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
-
-<%= yield %>
+  <nav class="navbar navbar-default navbar-top" role="navigation">
+    <div class="navbar-header">
+      <div class="navbar-right">
+        <% if student_signed_in? %>
+          <span class="devise-btn"><%= link_to "Sign out", destroy_student_session_path, method: :delete %></span>
+        <% else %>
+          <span class="devise-btn"><%= link_to "Log in", student_session_path %></span>
+          <span class="devise-btn"><%= link_to "Sign up", new_student_registration_path %></span>
+        <% end %>
+      </div>
+      <a class="navbar-brand" href="/"><h1 class="brand-head">Pairing Matrix</h1></a>
+      <div class="center-block">Makers strongly encourages promiscuity</div>
+    </div>
+  </nav>
+  <div class="container">
+    <p class="notice center-block"><%= notice %></p>
+    <p class="alert center-block"><%= alert %></p>
+    <%= yield %>
+  </div>
 
 </body>
 </html>
